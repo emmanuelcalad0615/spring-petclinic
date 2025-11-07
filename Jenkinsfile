@@ -21,7 +21,7 @@ pipeline {
       agent any
       steps {
         echo 'Building Docker image for Spring PetClinic...'
-        sh 'docker build -t emmanuelcalad0615/spring-petclinic:latest .'
+        sh 'docker build -t emmanuecalad/spring-petclinic:latest .'
       }
     }
   }
