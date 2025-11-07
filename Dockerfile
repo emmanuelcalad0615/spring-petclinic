@@ -11,4 +11,4 @@ COPY target/*.jar /home/spring-petclinic.jar
 CMD ["java","-jar","/home/spring-petclinic.jar"]
 
 # 5️⃣ Exponemos el puerto de la aplicación
-EXPOSE 8080
+EXPOSE 8081
