@@ -10,7 +10,7 @@ pipeline {
         }
       }
       steps {
-        echo '🧱 Compilando el proyecto con Maven...'
+        echo 'Compilando el proyecto con Maven...'
         sh 'mvn clean install'
       }
     }
@@ -18,7 +18,7 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        echo '🐳 Construyendo la imagen Docker...'
+        echo 'Construyendo la imagen Docker...'
         sh 'docker build -t emmanuecalad/spring-petclinic:latest .'
       }
     }
@@ -26,7 +26,7 @@ pipeline {
     stage('Docker Push') {
       agent any
       steps {
-        echo '🚀 Subiendo la imagen a Docker Hub...'
+        echo 'Subiendo la imagen a Docker Hub...'
         withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "echo $dockerHubPassword | docker login -u $dockerHubUser --password-stdin"
           sh 'docker push emmanuecalad/spring-petclinic:latest'
